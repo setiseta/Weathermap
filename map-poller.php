@@ -64,7 +64,7 @@ if (is_dir($conf_dir)) {
 			if ("." != $file && ".." != $file && ".htaccess" != $file && "index.php" != $file) {
 			    	$cmd = "php ./weathermap.php --config $conf_dir/$file --base-href $basehref --chdir ".$config['rrd_dir'];
                                 if ($config['rrdcached']) {
-                                    $cmd = $cmd." --daemon ".$config['rrdcached'];
+                                    $cmd = $cmd." --daemon ".$config['rrdcached_local'];
                                 }
 				$fp = popen($cmd, 'r');
 				while (!feof($fp)) {
